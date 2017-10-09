@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:oefDemotica"
         mc:Ignorable="d"
-        Title="Domotica" Height="350" Width="525">
+        Title="Domotica" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image></Image>
+        <StackPanel Grid.Row="1" >
+            <Label Content="Aansturing via Domoticasysteem" Margin="5" Height="30"></Label>
+            <ToggleButton Name="btnDomoLamp" Content="Aan/Uit" Height="100" Margin="5" Click="ToggleButton_Checked"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom">
+            <Button Content="+" Name="btnPlus" Height="30" Margin="5"></Button>
+            <Button Content="-" Name="btnMin" Height="30" Margin="5"></Button>
+            <ToggleButton Name="btnVerwarming" Content="Aan/Uit" Height="30" Margin="5" Click="ToggleButton_Checked"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Label Height="25" Content="Aansturing Via Elementen"></Label>
+            <ToggleButton Name="btnLamp" Height="125" Margin="5" Click="ToggleButton_Checked">
+                <Image Name="imgLamp"></Image>
+            </ToggleButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <Image Width="100"></Image>
+            <Slider Margin="5" Orientation="Vertical" Width="50" Value="0" Maximum="30" Minimum="0" ValueChanged="Slider_ValueChanged"></Slider>
+            <StackPanel>
+                <Label Width="50" Name="lblCelcius"></Label>
+                <Label Width="50" Name="lblFahrenheit"></Label>
+            </StackPanel>
+            
+        </StackPanel>
     </Grid>
 </Window>
